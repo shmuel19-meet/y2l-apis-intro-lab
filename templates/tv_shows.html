@@ -1,1 +1,17 @@
-Parse the Json string in app.py to replace this text!
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MORE_STUFF_THAT_WORKS</title>
+</head>
+<body>
+	{% for i in lst %}
+		<h1>{{i.name}}</h1>
+		<h1>{{i.type}}</h1>
+		<h1>{{i.language}}</h1>
+		<img src = "{{i.url}}">
+		{%for j in i.genres %}
+			<p>{{j}}</p>
+		{% endfor %}
+	{% endfor %}
+</body>
+</html>
