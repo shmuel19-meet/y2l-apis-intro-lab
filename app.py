@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -80,6 +81,9 @@ def dog_breeds():
     #parsed_stuff = requests.get("https://dog.ceo/api/breeds/list/all")
     #parsed_stuff = parsed_stuff.encode('utf8')
     #parsed_stuff = json.loads(parsed_stuff)
+    parsed_stuff = requests.get("https://dog.ceo/api/breeds/list/all").content
+    print(parsed_stuff)
+    time.sleep(5)
     return render_template('dogs.html', dogs = json.loads(requests.get("https://dog.ceo/api/breeds/list/all").content))
 
 if __name__ == '__main__':
